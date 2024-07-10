@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: abdullellah-deploy
 spec:
-  replicas: 10
+  replicas: 10 # test
   selector:
     matchLabels:
       app: abdullellah-demo
