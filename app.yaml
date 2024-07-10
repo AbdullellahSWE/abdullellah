@@ -50,3 +50,12 @@ data:
   config-file.yaml: |
     key1: value1
     key2: value2
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: abdullellah-secret
+type: Opaque
+data:
+  username: YWRtaW4=  # Replace with your base64 encoded username
+  password: MWYyZDFlMmU2N2Rm  # Replace with your base64 encoded password
