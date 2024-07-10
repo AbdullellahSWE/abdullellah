@@ -41,3 +41,12 @@ spec:
     - port: 80
       targetPort: 80
   type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: abdullellah-configmap
+data:
+  config-file.yaml: |
+    key1: value1
+    key2: value2
