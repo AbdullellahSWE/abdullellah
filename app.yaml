@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abdullellah-deploy
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: abdullellah-demo
+  template:
+    metadata:
+      labels:
+        app: abdullellah-demo
+    spec:
+      containers:
+      - name: abdullellah-demo
+        image: abdullellah/nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: abdullellah-cd-service
+spec:
+  selector:
+    app: abdullellah-demo
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: abdullellah-cd-service2
+spec:
+  selector:
+    app: abdullellah-demo
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP
